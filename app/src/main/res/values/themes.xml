@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LazyFragment" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.LazyFragment" parent="Base.Theme.LazyFragment" />
+
+    <style name="BottomBarRestaurantStyle" parent="Theme.Material3.Light.NoActionBar">
+
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="elevation">10dp</item>
+    </style>
+</resources>

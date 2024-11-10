@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/BottomBar"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:focusable="true"
+        android:clickable="false"
+        style="@style/BottomBarRestaurantStyle"
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/restaurant_bottom_bar"
+
+        android:elevation="10dp"
+        app:elevation="10dp"/>
+
+</FrameLayout>
