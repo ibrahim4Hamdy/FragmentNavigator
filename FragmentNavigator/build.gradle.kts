@@ -29,11 +29,14 @@ android {
 }
 publishing {
     publications {
-        create<MavenPublication>("release") {
-            from(components.findByName("release"))
-            groupId = "com.qena.navigator.fragment"
-            artifactId = "navigator"
-            version = "0.0.3-alpha"
+        register<MavenPublication>("release") {
+            afterEvaluate {
+                from(components.findByName("release"))
+
+            }
+//            groupId = "com.qena.navigator.fragment"
+//            artifactId = "navigator"
+//            version = "0.0.3-alpha"
 
         }
     }
