@@ -33,7 +33,7 @@ publishing {
             from(components.findByName("release"))
             groupId = "com.qena.navigator.fragment"
             artifactId = "navigator"
-            version = "0.0.1-alpha"
+            version = "0.0.3-alpha"
 
         }
     }

@@ -11,8 +11,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FragmentNavigator" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app/FragmentNavigator" />
           </set>
         </option>
       </GradleProjectSettings>
