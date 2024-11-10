@@ -37,6 +37,11 @@ publishing {
 
         }
     }
+    repositories {
+        maven {
+            url = uri("https://jitpack.io")
+        }
+    }
 }
 
 
