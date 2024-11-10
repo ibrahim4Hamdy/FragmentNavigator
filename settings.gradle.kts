@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LazyFragment"
 include(":app")
-include(":app:FragmentNavigator")
+include(":FragmentNavigator")

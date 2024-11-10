@@ -1,5 +1,7 @@
 package com.qena.navigation.fragments;
 
+import android.annotation.SuppressLint;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +49,7 @@ public class FragmentStateManager {
      * @param menuItemId The ID associated with the fragment.
      * @return The "keep state" flag (true if the fragment should retain its state, false otherwise).
      */
+    @SuppressLint("NewApi")
     public boolean getFragmentState(int menuItemId) {
         return fragmentKeepStateMap.getOrDefault(menuItemId, false); // Default to false if no state is set
     }
