@@ -5,4 +5,4 @@ before_install:
   - ./scripts/prepareJitpackEnvironment.sh
 install:
   - FILE="-Dfile=Navigator.aar"
-  - mvn install:install-file $FILE -DgroupId=com.github.ibrahim4Hamdy -DartifactId=FragmentNavigator -Dversion=0.0.13-alpha -Dpackaging=aar -DgeneratePom=true
+  - mvn install:install-file $FILE -DgroupId=com.github.ibrahim4Hamdy -DartifactId=FragmentNavigator -Dversion=0.0.14-alpha -Dpackaging=aar -DgeneratePom=true
