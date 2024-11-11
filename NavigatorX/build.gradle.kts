@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 group = "com.github.ibrahim4Hamdy"
-version = "0.0.7-alpha"
+version = "0.0.11-alpha"
 android {
     namespace = "com.qena.navigation.fragments"
     compileSdk = 34
@@ -38,8 +38,7 @@ publishing {
                 from(components.findByName("release"))
                 groupId = "com.github.ibrahim4Hamdy"
                 artifactId = "FragmentNavigator"
-                version = "0.0.9-alpha"
-                artifact("$buildDir/outputs/aar/NavigatorX-release.aar")
+                version = "0.0.11-alpha"
 
 
             }
