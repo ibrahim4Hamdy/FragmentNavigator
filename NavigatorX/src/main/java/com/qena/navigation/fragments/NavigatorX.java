@@ -20,7 +20,7 @@ import java.util.Map;
  *
  * By combining these managers, FragmentNavigator makes it easy to navigate between fragments while managing their state and transactions efficiently.
  */
-public class FragmentNavigator {
+public class NavigatorX {
 
     private final FragmentManager fragmentManager;               // The FragmentManager responsible for managing fragments
     private final FragmentTransactionManager transactionManager; // Manages fragment transaction operations (add, remove, hide, show)
@@ -35,7 +35,7 @@ public class FragmentNavigator {
      *
      * @param fragmentManager The FragmentManager instance to handle fragment transactions.
      */
-    public FragmentNavigator(@NonNull FragmentManager fragmentManager) {
+    public NavigatorX(@NonNull FragmentManager fragmentManager) {
         this.fragmentManager = fragmentManager;
         this.transactionManager = new FragmentTransactionManager(fragmentManager);
         this.stateManager = new FragmentStateManager();
