@@ -1,1 +1,6 @@
 /build
+.gradle
+/build.gradle.kts
+/proguard-rules.pro
+/src
+

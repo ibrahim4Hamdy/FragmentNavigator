@@ -8,11 +8,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.qena.navigation.fragments.FragmentNavigator;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigationView;
-    FragmentNavigator navigator;
+    NavigatorX navigator;
     Fragment home =new HomeFragment();
     Fragment offers =new OffersFragment();
     Fragment saved =new SavedFragment();
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigationView =findViewById(R.id.BottomBar);
 
         navigationView.setOnNavigationItemSelectedListener(this);
-        navigator =new FragmentNavigator(getSupportFragmentManager());
+        navigator =new NavigatorX(getSupportFragmentManager());
 
         navigator.addFragment(R.id.ic_home,home,false);
         navigator.addFragment(R.id.ic_offers,offers,false);
