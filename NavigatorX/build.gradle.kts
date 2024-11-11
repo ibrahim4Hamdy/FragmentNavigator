@@ -7,6 +7,7 @@ version = "0.0.7-alpha"
 android {
     namespace = "com.qena.navigation.fragments"
     compileSdk = 34
+    buildToolsVersion ="35"
 
     defaultConfig {
         minSdk = 23
@@ -16,11 +17,13 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            consumerProguardFiles( "proguard-rules.pro") //added this line
+
         }
     }
     compileOptions {
@@ -35,7 +38,9 @@ publishing {
                 from(components.findByName("release"))
                 groupId = "com.github.ibrahim4Hamdy"
                 artifactId = "FragmentNavigator"
-                version = "0.0.7-alpha"
+                version = "0.0.9-alpha"
+                artifact("$buildDir/outputs/aar/NavigatorX-debug.aar")
+
 
             }
 
