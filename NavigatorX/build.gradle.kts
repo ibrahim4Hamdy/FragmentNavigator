@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 group = "com.github.ibrahim4Hamdy"
-version = "0.0.13-alpha"
+version = "0.0.14-alpha"
 android {
     namespace = "com.qena.navigation.fragments"
     compileSdk = 34
@@ -32,29 +32,39 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
-                afterEvaluate {
-                    groupId = "com.github.ibrahim4Hamdy"
-                    artifactId = "FragmentNavigator"
-                    version = "0.0.13-alpha"
-                    //from components.android
-                    from(components.findByName("release"))
-
-
-
-                }
-
-            }
-        }
-
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))      // << --- ADD This
     }
+}
+//===============================
 
-
+java {
+    sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            afterEvaluate {
+                groupId = "com.github.ibrahim4Hamdy"
+                artifactId = "FragmentNavigator"
+                version = "0.0.14-alpha"
+                //from components.android
+                from(components.findByName("release"))
+
+
+
+            }
+
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+
+}
 
 
 
