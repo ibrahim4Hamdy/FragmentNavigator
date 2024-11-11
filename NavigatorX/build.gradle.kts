@@ -39,7 +39,7 @@ publishing {
                 groupId = "com.github.ibrahim4Hamdy"
                 artifactId = "FragmentNavigator"
                 version = "0.0.9-alpha"
-                artifact("$buildDir/outputs/aar/NavigatorX-debug.aar")
+                artifact("$buildDir/outputs/aar/NavigatorX-release.aar")
 
 
             }
