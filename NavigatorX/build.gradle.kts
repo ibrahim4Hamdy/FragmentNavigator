@@ -30,6 +30,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 java {
     toolchain {
@@ -46,21 +52,15 @@ java {
 publishing {
     publications {
         register<MavenPublication>("release") {
+            groupId = "com.github.ibrahim4Hamdy"
+            artifactId = "FragmentNavigator"
+            version = "0.0.14-alpha"
             afterEvaluate {
-                groupId = "com.github.ibrahim4Hamdy"
-                artifactId = "FragmentNavigator"
-                version = "0.0.14-alpha"
-                //from components.android
-                from(components.findByName("release"))
-
-
-
+                from(components["release"])
             }
 
         }
-        repositories {
-            mavenLocal()
-        }
+
     }
 
 }
