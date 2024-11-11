@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 group = "com.github.ibrahim4Hamdy"
-version = "0.0.14-alpha"
+version = "0.0.15-alpha"
 android {
     namespace = "com.qena.navigation.fragments"
     compileSdk = 34
@@ -54,7 +54,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.ibrahim4Hamdy"
             artifactId = "FragmentNavigator"
-            version = "0.0.14-alpha"
+            version = "0.0.15-alpha"
             afterEvaluate {
                 from(components["release"])
             }
