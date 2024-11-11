@@ -33,9 +33,9 @@ android {
 }
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        register<MavenPublication>("java") {
             afterEvaluate {
-                from(components.findByName("release"))
+                from(components.findByName("java"))
                 groupId = "com.github.ibrahim4Hamdy"
                 artifactId = "FragmentNavigator"
                 version = "0.0.11-alpha"
