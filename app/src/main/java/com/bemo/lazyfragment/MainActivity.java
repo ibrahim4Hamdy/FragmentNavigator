@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigationView;
-    NavigatorX navigator;
+  //  NavigatorX navigator;
     Fragment home =new HomeFragment();
     Fragment offers =new OffersFragment();
     Fragment saved =new SavedFragment();
@@ -24,20 +24,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigationView =findViewById(R.id.BottomBar);
 
         navigationView.setOnNavigationItemSelectedListener(this);
-        navigator =new NavigatorX(getSupportFragmentManager());
-
-        navigator.addFragment(R.id.ic_home,home,false);
-        navigator.addFragment(R.id.ic_offers,offers,false);
-        navigator.addFragment(R.id.ic_saved,saved,true);
-        navigator.addFragment(R.id.ic_cart,cart,false);
-        navigator.addFragment(R.id.ic_profile,profile,true);
-        navigator.setCurrentFragment(R.id.ic_home,home,R.id.frame_container);
+//        navigator =new NavigatorX(getSupportFragmentManager());
+//
+//        navigator.addFragment(R.id.ic_home,home,false);
+//        navigator.addFragment(R.id.ic_offers,offers,false);
+//        navigator.addFragment(R.id.ic_saved,saved,true);
+//        navigator.addFragment(R.id.ic_cart,cart,false);
+//        navigator.addFragment(R.id.ic_profile,profile,true);
+//        navigator.setCurrentFragment(R.id.ic_home,home,R.id.frame_container);
 
 
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return navigator.navigateToFragment(item.getItemId(),R.id.frame_container);
+        return true;//navigator.navigateToFragment(item.getItemId(),R.id.frame_container);
     }
 }
