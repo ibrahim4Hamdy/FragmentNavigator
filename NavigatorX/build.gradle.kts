@@ -31,25 +31,41 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-publishing {
-    publications {
-        register<MavenPublication>("java") {
-            afterEvaluate {
-                from(components.findByName("java"))
-                groupId = "com.github.ibrahim4Hamdy"
-                artifactId = "FragmentNavigator"
-                version = "0.0.11-alpha"
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("java") {
+                afterEvaluate {
+                    groupId = "com.github.ibrahim4Hamdy"
+                    artifactId = "FragmentNavigator"
+                    version = "0.0.11-alpha"
+                    //from components.android
+                    from(components["android"])
 
+                    // إضافة الـ sourcesJar و javadocJar كـ artifacts
+                    artifact(sourcesJar)
+                    artifact(javadocJar)
+                    artifact("$buildDir/outputs/aar/NavigatorX-release.aar")
+
+
+                }
 
             }
+        }
 
-        }
     }
-    repositories {
-        maven {
-            url = uri("https://jitpack.io")
-        }
-    }
+
+}
+
+val sourcesJar by tasks.registering(Jar::class) {
+    from(android.sourceSets["main"].java.srcDirs) // تضمين ملفات المصدر
+    archiveClassifier.set("sources") // تعيين الـ classifier
+}
+
+// تعريف task لـ javadocJar
+val javadocJar by tasks.registering(Jar::class) {
+    from("$buildDir/javadoc") // تضمين ملفات الـ javadoc
+    archiveClassifier.set("javadoc") // تعيين الـ classifier
 }
 
 
