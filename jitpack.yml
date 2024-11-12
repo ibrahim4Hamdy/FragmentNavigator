@@ -1,8 +1,5 @@
 # configuration file for building snapshots and releases with jitpack.io
 jdk:
   - openjdk17
-install:
-  - ./gradlew clean assemble
-
 build:
   - ./gradlew build
