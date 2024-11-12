@@ -2,7 +2,7 @@
 
 # FragmentNavigator
 
-FragmentNavigator is a simple library designed to make navigation between screens (Fragments) in Android applications more organized, flexible, and easy to use, especially in larger applications with multiple screens.
+`FragmentNavigator` is a lightweight Android library designed to simplify navigation between fragments in your Android applications. It provides an easy-to-use API for managing fragment transitions, handling the fragment back stack, and optimizing performance by loading fragments only when necessary.
 
 ## 🚀 Why FragmentNavigator?
 
