@@ -17,7 +17,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -26,6 +26,9 @@ android {
 
         }
     }
+
+//    sourceSets["main"].java.srcDirs("src/main/java")
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -49,14 +52,29 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+//tasks.register<Jar>("sourcesJar") {
+//    from(android.sourceSets["main"].java.srcDirs)
+//    archiveClassifier.set("sources")
+//}
+//
+//tasks.register<Jar>("javadocJar") {
+//    archiveClassifier.set("javadoc")
+//    from("$buildDir/javadoc")
+//}
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        create<MavenPublication>("release") {
             groupId = "com.github.ibrahim4Hamdy"
             artifactId = "FragmentNavigator"
             version = "0.0.15-alpha"
             afterEvaluate {
                 from(components["release"])
+//                artifact("sourcesJar")
+//                artifact("javadocJar")
+//                tasks.register("prepareReleaseJar", Jar::class.java) {
+//                    from(android.sourceSets["main"].java.srcDirs)
+//                    archiveClassifier.set("classes")
+//                }
             }
 
         }
