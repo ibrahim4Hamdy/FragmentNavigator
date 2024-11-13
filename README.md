@@ -2,7 +2,7 @@
 [![](https://img.shields.io/github/license/ibrahim4Hamdy/FragmentNavigator?style=flat)](https://opensource.org/license/mit)
 
 
-# FragmentNavigator
+## FragmentNavigator
 
 `FragmentNavigator` is a lightweight Android library designed to simplify navigation between fragments in your Android applications. It provides an easy-to-use API for managing fragment transitions, handling the fragment back stack, and optimizing performance by loading fragments only when necessary.
 
