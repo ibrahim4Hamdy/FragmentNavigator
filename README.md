@@ -1,4 +1,6 @@
 [![](https://jitpack.io/v/ibrahim4Hamdy/FragmentNavigator.svg)](https://jitpack.io/#ibrahim4Hamdy/FragmentNavigator)
+![GitHub License](https://img.shields.io/github/license/ibrahim4Hamdy/FragmentNavigator?style=flat)
+
 
 # FragmentNavigator
 
