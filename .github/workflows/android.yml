@@ -24,7 +24,7 @@ jobs:
       run: ./gradlew lintDebug
 
     - name: Uploade Report Test 
-      uses: actions/artifact@v2
+      uses: actions/uploade-artifact@v2
       with:
         name: index.html
         path: app/build/reports/lint-results-release.html
