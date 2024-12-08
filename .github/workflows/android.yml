@@ -7,8 +7,31 @@ on:
     branches: [ "main" ]
     
 
-jobs:
-  init:
+jobs:    
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - uses: actions/checkout@v4
+      - name: set up JDK 23
+        uses: actions/setup-java@v4
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          cache: gradle
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+       
+      - name: Run lint
+        run: ./gradlew lintDebug
+      - name: Upload html test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: index.html
+          path: NavigatorX/build/reports/lint-results-debug.html
+          
+  unit_test:
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,21 +43,8 @@ jobs:
           cache: gradle
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
         
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run lint
-        run: ./gradlew lintDebug
-      - name: Upload html test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: index.html
-          path: NavigatorX/build/reports/lint-results-debug.html
-          
-  unit_test:
-    runs-on: ubuntu-latest
-    steps:
       - name: Run test
         run: ./gradlew test
       - name: Upload html test report
